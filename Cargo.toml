@@ -9,7 +9,7 @@ readme = "README.md"
 homepage = "https://docs.rs/helios/latest/helios/"
 repository = "https://github.com/bwte/helios"
 license-file = "LICENSE"
-keywords = ["rust", "books", "oop", "library", "object-oriented", "macro"]
+keywords = ["rust", "oop", "library", "object-oriented", "macro"]
 categories = ["rust-oop", "oop", "object-oriented", "rust"]
 publish = true
 
