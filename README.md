@@ -1,69 +1,72 @@
-# Rust Template
+# Helio ☀
+[![](https://img.shields.io/badge/rust-1.15.0-brightgreen.svg)](https://crates.io/crates/helio)
+[![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-![build](https://github.com/bwte/template/workflows/Rust/badge.svg)
-![release](https://github.com/bwte/template/actions/workflows/release.yml/badge.svg)
+A library for creating oop-oriented code in rust. Intended originally for my project: [Lightfetch](https://github.com/bwte/lightfetch/).
 
-A project template for Rust, helping to structure your projects blazingly fast ⚡.
+## Features and Benefits :sunglasses:
 
-## Features 🔥
+- Create safe, fast, and (hopefully) secure Object-Oriented code in Rust.
+- Static instances of types.
 
-- Code-ready for binary projects.
-- Add amazing features yourself 😋.
+## Use cases 💡
 
-## Download
+Annoyed by the fact that Rust is missing a lot of object-oriented features, I decided to create this library to fill a couple of gaps in a lightweight, safe, and fast manner.
 
-Available releases can be downloaded for your platform of choice on the [Releases](https://github.com/bwte/template/releases) page.
+## Usage 🤔
 
-## Usage
+#### Create a Static Instance of a Type
 
-☑️ Steps to set up your own personal project:
+```rust
+#[macro_use]
+use helio::{Instance, New};
 
-- Use this repository as a template but make sure to copy the branches too.
-- 🔧 Update the `Cargo.toml` with your desired information for your project.
-- ⚙️ Update the `release.yml` to change the release branch to your preferred branch and make sure to change the following fields to your likings.
-```yml
-# FILE EXPORT CONFIGURATION.
-release_version: 0.1.0 # Change your version here.
-bin_name: template # You might want to change it to your preferred export name.
-# END OF CONFIGURATION.
-...
-# RELEASE TAB CONFIGURATION.
-tag_name: 0.1.0 # Change your version here.
-release_name: 📦 Template 0.1.0 # You might want to change it to your preferred release name.
-prerelease: true # Set to false to create a "stable release".
-draft: false # Set to true to create a draft release. This will keep your release private, and you would need to manually publish it.
-# END OF CONFIGURATION.
+/// Make sure to use the Clone trait!
+#[derive(Clone)]
+struct Example {
+    counter: u32,
+}
+
+/// Regular implementation of a struct with any methods you want.
+impl Example {
+    fn new() -> Self {
+        Example { counter: 0 }
+    }
+    fn count(&mut self) {
+        self.counter += 1;
+    }
+}
+
+/// Implement the Instance trait for Example.
+impl Instance for Example {
+    fn counter(&self) -> u32 {
+        self.counter
+    }
+}
+
+fn main() {
+    let example = Example::new(); /// Create a new instance of Example.
+    example.count(); /// Use that instance to call the count() method and count up.
+    println!("{}", example.counter()); /// Access the counter and print it.
+}
 ```
-- 🔖 Change the name inside the `LICENSE` file, or replace it with a new license.
-- 📜 Change the email inside the `CODE_OF_CONDUCT.md` file, or replace it with one fit to your likings.
-- 💰 Update the `FUNDING.yml` file with your username or just delete it.
-- 📄 Update this `README.md`.
-- 📰 Update the `CHANGELOG` and add your amazing features!
+## Installing 📦
 
-## Releasing ✨
-
-- Push your changes to your preferred releases branch, you have supplied in the `release.yml` file.
-- It will use the title of the merge commit as the release name and the description of the merge commit as the release description.
-- 🤖 The release will be created automatically!
-
-## Building 🔨
-
-If desired, you can build this project yourself. You will need a working `Rust` and `Cargo` setup. [Rustup](https://rustup.rs/) is the simplest way to set this up on either Windows, Mac or Linux.
-
-Once the prerequisites have been installed, compilation on your native platform is as simple as running the following in a terminal:
-
-```
-cargo build --release
+```toml
+[dependencies]
+helio = "0.1.0"
 ```
 
-## Compatibility 💻
+## Show your support 💛
 
-This template supports running on every platform.
+[![](https://img.shields.io/badge/github-helio-blue.svg)](https://github.com/bwte/helio) [![](https://img.shields.io/badge/support-me-pink)](https://github.com/sponsors/bwte)
+
+Leave a ⭐ if you like this project.
 
 ## Contribution 🚩
 
-Found a problem or have a suggestion? Feel free to open an issue.
+Found a problem or have a suggestion? Feel free to open an issue or a pull request!
 
 ## License
 
-This template itself is licensed under the [The Unlicense](LICENSE) and includes this as the default project license.
+This template itself is licensed under the [MIT License](LICENSE) and includes this as the default project license.
