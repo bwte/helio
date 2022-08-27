@@ -1,13 +1,13 @@
 [package]
 name = "helio"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["bwte <contact@bwte.ml>"]
 edition = "2021"
 description = "📚 A library for creating oop-oriented code in rust. Intended for use in 'lightfetch'."
-documentation = "https://bwte.ml/"
+documentation = "https://docs.rs/helios/latest/helio/"
 readme = "README.md"
-homepage = "https://docs.rs/helios/latest/helios/"
-repository = "https://github.com/bwte/helios"
+homepage = "https://bwte.ml/"
+repository = "https://github.com/bwte/helio"
 license-file = "LICENSE"
 keywords = ["rust", "oop", "library", "object-oriented", "macro"]
 categories = ["rust-oop", "oop", "object-oriented", "rust"]

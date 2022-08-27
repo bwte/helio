@@ -1,5 +1,5 @@
 # Helio ☀
-[![](https://img.shields.io/badge/rust-1.15.0-brightgreen.svg)](https://crates.io/crates/helio)
+[![](https://img.shields.io/badge/rust-1.58.0-brightgreen.svg)](https://crates.io/crates/helio)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 A library for creating oop-oriented code in rust. Intended originally for my project: [Lightfetch](https://github.com/bwte/lightfetch/).
